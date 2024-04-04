@@ -1,5 +1,5 @@
 import Joi from "joi";
-import { Is2sCardEncryptionPayload, Is2sCardPaymentPayload } from "../interface/IAcceptPayment";
+import { Is2sBankTransferPayload, Is2sCardEncryptionPayload, Is2sCardPaymentPayload } from "../interface/IAcceptPayment";
 
 
 
@@ -14,6 +14,18 @@ class AcceptPaymentValidator {
             currency: Joi.string().required(),
             email: Joi.string().email().required(),
             pin: Joi.string().required(),
+        });
+
+        return s2sCardPaymentSchema.validate(data)
+    }
+
+    public s2sBankTransferPayload = (data: Is2sBankTransferPayload) => {
+
+        const s2sCardPaymentSchema = Joi.object({
+            amount: Joi.string().required(),
+            name: Joi.string().required(),
+            currency: Joi.string().required(),
+            email: Joi.string().email().required()
         });
 
         return s2sCardPaymentSchema.validate(data)

@@ -8,6 +8,13 @@ interface Is2sCardPaymentPayload {
     pin: string
 };
 
+interface Is2sBankTransferPayload {
+    amount: string
+    name: string
+    currency: string
+    email: string
+};
+
 interface Is2sCardEncryptionPayload {
     number: string;
     expiryMonth: string;
@@ -18,5 +25,6 @@ interface Is2sCardEncryptionPayload {
 
 export {
     Is2sCardPaymentPayload,
-    Is2sCardEncryptionPayload
+    Is2sCardEncryptionPayload,
+    Is2sBankTransferPayload
 };
