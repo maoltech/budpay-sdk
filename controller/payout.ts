@@ -1,6 +1,6 @@
 import axios from "axios"
 import {baseUrl} from "../utils/constants"
-import {IAccountNameVerify} from "../interface/IPayout"
+import {IAccountNameVerify, ISinglePayout} from "../interface/IPayout"
 import {payoutValidator} from "../validator/payout.validator"
 import { BadRequest } from "../utils/responseMethod";
 import { utils } from "../utils/utils";
@@ -64,7 +64,7 @@ class Payout {
             
             const {error} = payoutValidator.accountNameVerify(data)
             if(error){
-                BadRequest(error.message)
+                throw BadRequest(error.message)
             }
     
             const reference = utils.referenceGenerator()
@@ -88,6 +88,13 @@ class Payout {
             throw error
         }
 
+    }
+
+    public singlePayout = (secret: string, data: ISinglePayout) => {
+        const {error} = payoutValidator.accountNameVerify(data)
+            if(error){
+                throw BadRequest(error.message)
+            }
     }
 
 }
