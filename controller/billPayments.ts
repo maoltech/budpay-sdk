@@ -117,9 +117,11 @@ class BillPayment {
                 throw BadRequest(error.message)
             }
 
+            const encryption = utils.encryptData(secret, data)
             const headers = {
                 Authorization: `Bearer ${secret}`,
-                "content-type": "application/json"
+                "content-type": "application/json",
+                "Encryption": encryption
             }
 
             const reference = utils.referenceGenerator()
@@ -194,9 +196,11 @@ class BillPayment {
                 throw BadRequest(error.message)
             }
 
+            const encryption = utils.encryptData(secret, data)
             const headers = {
                 Authorization: `Bearer ${secret}`,
-                "content-type": "application/json"
+                "content-type": "application/json",
+                "Encryption": encryption
             }
 
             const reference = utils.referenceGenerator()
@@ -222,10 +226,11 @@ class BillPayment {
             if(error){
                 throw BadRequest(error.message)
             }
-
+            const encryption = utils.encryptData(secret, data)
             const headers = {
                 Authorization: `Bearer ${secret}`,
-                "content-type": "application/json"
+                "content-type": "application/json",
+                "Encryption": encryption
             }
 
             const reference = utils.referenceGenerator()
@@ -251,10 +256,11 @@ class BillPayment {
             if(error){
                 throw BadRequest(error.message)
             }
-
+            const encryption =  utils.encryptData(secret, data)
             const headers = {
                 Authorization: `Bearer ${secret}`,
-                "content-type": "application/json"
+                "content-type": "application/json",
+                "Encryption": encryption
             }
 
             const reference = utils.referenceGenerator()

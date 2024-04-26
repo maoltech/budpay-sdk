@@ -98,12 +98,40 @@ class Payout {
                 throw BadRequest(error.message)
             }
 
+            const encryption = utils.encryptData(secret, data)
             const headers = {
                 Authorization: `Bearer ${secret}`,
-                "content-type": "application/json"
+                "content-type": "application/json",
+                "Encryption": encryption
             }
             const response = await axios.post(
                 `${baseUrl}/bank_transfer`,
+                data,
+                {headers}
+            )
+    
+            return response.data
+        }catch(error){
+            throw error
+        }
+    }
+    
+    public bulkPayout = async(secret: string, data: IBulkPayout) => {
+
+        try{
+            const {error} = payoutValidator.bulkPayout(data)
+            if(error){
+                throw BadRequest(error.message)
+            }
+
+            const encryption = utils.encryptData(secret, data)
+            const headers = {
+                Authorization: `Bearer ${secret}`,
+                "content-type": "application/json",
+                "Encryption": encryption
+            }
+            const response = await axios.post(
+                `${baseUrl}/bulk_bank_transfer`,
                 data,
                 {headers}
             )
