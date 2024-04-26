@@ -51,7 +51,7 @@ class IdentityVerification {
             }
 
             const response = await axios.post(
-                `${baseUrl}/bvn_verify`,
+                `${baseUrl}/bvn/verify`,
                 payload,
                 {headers}
             )
