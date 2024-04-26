@@ -10,10 +10,30 @@ interface ISinglePayout {
     bank_code: string,
     currency: string,
     narration: string,
-    account_number: string
+    account_number: string,
+    paymentMode?: string
+}
+
+interface ITransfers{
+    amount: string,
+    bank_code: string,
+    bank_name: string,
+    account_number: string,
+    narration?: string
+}
+interface IBulkPayout {
+    currency: string,
+    transfer: ITransfers[]
+}
+
+interface IFeePayout {
+    currency: string,
+    amount: string
 }
 
 export {
     IAccountNameVerify,
-    ISinglePayout
+    ISinglePayout,
+    IBulkPayout,
+    IFeePayout
 }
