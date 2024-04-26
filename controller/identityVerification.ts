@@ -55,6 +55,8 @@ class IdentityVerification {
                 payload,
                 {headers}
             )
+
+            return response.data
         }catch(error) {
             throw error
         }
