@@ -42,10 +42,22 @@ acceptPayment.s2sCardEncryptionV2(secret, data);
 ```
 
 #### s2sCardTransaction
+
+##### Example Data
+```bash
+{ "amount": "100", "card" :"83fa6763bb31bae36a74f787ab814514aeede91fcdb311fd67609b414c5e5ea2751a47870c8717e71bcbc9c33287a3d6af9ffae8e2edbf2de1e2694384d699b020d31492637eef60d7a63f303798363a", "currency": "USD", "email": "test@email.com", "reference": "1253627873656276350" }
+```
+
 ```bash
 acceptPayment.s2sCardTransaction(secret, data);
 ```
 #### s2sBankTransfer
+
+##### Example Data
+```bash
+{ "email": "test@test.com", "amount": "100", "currency" :"NGN", "reference": "1253627873656276350", "name": "Business Name / Firstname lastname" }
+```
+
 ```bash
 acceptPayment.s2sBankTransfer(secret, data);
 ```
