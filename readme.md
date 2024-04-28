@@ -23,17 +23,19 @@ import {acceptPayment} from 'payment-gateway-sdk'
 
 #### s2sCardEncryptionV2
 
-##### Example ata
+##### Example Data
+```bash
 {
     "data" :{
         "number": "5123450000000008",
         "expiryMonth": "10",
         "expiryYear": "22",
         "cvv" : "100",
-        "pin" : "1234" 
+        "pin" : "1234" // (optional - only required for verve/local cards)
     },
     "reference": "1253627873656276350"
 }
+```
 
 ```bash
 acceptPayment.s2sCardEncryptionV2(secret, data);
