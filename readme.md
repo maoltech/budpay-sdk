@@ -12,10 +12,33 @@ npm install payment-gateway-sdk
 
 ## Usage
 
+### Note
+secrets is your api key. Register on budpay to website https://app.budpay.com/ or https://merchant.budpay.com/ to get your api key.
 ### Accept Payment
+
+
 ```bash
 import {acceptPayment} from 'payment-gateway-sdk'
 ```
+
+#### s2sCardEncryptionV2
+
+##### Data
+{
+    "data" :{
+        "number": "5123450000000008",
+        "expiryMonth": "10",
+        "expiryYear": "22",
+        "cvv" : "100",
+        "pin" : "1234" // (optional - only required for verve/local cards)
+    },
+    "reference": "1253627873656276350"
+}
+
+```bash
+acceptPayment.s2sCardEncryptionV2(secret, data);
+```
+
 #### s2sCardTransaction
 ```bash
 acceptPayment.s2sCardTransaction(secret, data);
@@ -25,10 +48,6 @@ acceptPayment.s2sCardTransaction(secret, data);
 acceptPayment.s2sBankTransfer(secret, data);
 ```
 
-#### s2sCardEncryptionV2
-```bash
-acceptPayment.s2sCardEncryptionV2(secret, data);
-```
 #### s2sCardTransactionV2
 ```bash
 acceptPayment.s2sCardTransactionV2(secret, data);
