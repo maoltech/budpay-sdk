@@ -23,14 +23,14 @@ import {acceptPayment} from 'payment-gateway-sdk'
 
 #### s2sCardEncryptionV2
 
-##### Data
+##### Example ata
 {
     "data" :{
         "number": "5123450000000008",
         "expiryMonth": "10",
         "expiryYear": "22",
         "cvv" : "100",
-        "pin" : "1234" // (optional - only required for verve/local cards)
+        "pin" : "1234" 
     },
     "reference": "1253627873656276350"
 }
