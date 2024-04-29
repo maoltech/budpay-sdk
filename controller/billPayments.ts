@@ -282,4 +282,4 @@ class BillPayment {
     }
 }
 
-const billPayment = new BillPayment();
+export const billPayment = new BillPayment();

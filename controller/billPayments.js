@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.billPayment = void 0;
 const axios_1 = __importDefault(require("axios"));
 const constants_1 = require("../utils/constants");
 const billPayment_validator_1 = require("../validator/billPayment.validator");
@@ -217,4 +218,4 @@ class BillPayment {
         });
     }
 }
-const billPayment = new BillPayment();
+exports.billPayment = new BillPayment();
