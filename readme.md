@@ -14,11 +14,12 @@ npm install budpay-sdk
 
 ### Note
 secrets is your api key. Register on budpay to website  [here](https://app.budpay.com/) or [here for older version](https://merchant.budpay.com/) to get your api key.
+
+
 ### Accept Payment
 
-
 ```bash
-import {acceptPayment} from 'payment-gateway-sdk'
+import {acceptPayment} from 'bupday-sdk'
 ```
 
 #### s2sCardEncryptionV2
