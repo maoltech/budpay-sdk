@@ -307,18 +307,58 @@ payout.bankNameVerification(secretsecret, data);
 payout.singlePayout(secret, data);
 ```
 #### bulkPayout
+
+##### Example Data
+```bash
+{
+    "currency": "NGN",
+    "transfers": [
+        {
+            "amount": "200",
+            "bank_code": "000013",
+            "bank_name": "GUARANTY TRUST BANK",
+            "account_number": "0050883605",
+            "narration": "January Salary"
+        },
+        {
+            "amount": "100",
+            "bank_code": "000013",
+            "bank_name": "GUARANTY TRUST BANK",
+            "account_number": "0050883605",
+            "narration": "February  Salary"
+        },
+        {
+            "amount": "100",
+            "bank_code": "000013",
+            "bank_name": "GUARANTY TRUST BANK",
+            "account_number": "0050883605",
+            "narration": "March  Salary"
+        }
+    ]
+}
+```
+
 ```bash
 payout.bulkPayout(secret, data);
 ```
 #### verifyPayout
 ```bash
-payout.verifyPayout(secret, data);
+payout.verifyPayout(secret, reference);
 ```
 #### listPayout
 ```bash
 payout.listPayout(secret, data);
 ```
 #### feePayout
+
+##### Example Data
+```bash
+{
+    "currency": "NGN",
+    "amount": "100"
+}
+```
+
 ```bash
 payout.feePayout(secret, data);
 ```
