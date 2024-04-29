@@ -1,19 +1,19 @@
 # Payment Gateway SDK
 
-Welcome to the Payment Gateway SDK! This SDK provides seamless integration with our payment gateway, allowing you to accept payments, facilitate bill payments, perform identity verification, and manage payouts efficiently.
+Welcome to the Payment Gateway SDK! This SDK provides seamless integration with BudPay payment gateway, allowing you to accept payments, facilitate bill payments, perform identity verification, and manage payouts efficiently.
 
 ## Installation
 
 To get started, simply include the SDK in your project. No need to instantiate the main class, as it's already done for you.
 
 ```bash
-npm install payment-gateway-sdk
+npm install budpay-sdk
 ```
 
 ## Usage
 
 ### Note
-secrets is your api key. Register on budpay to website https://app.budpay.com/ or https://merchant.budpay.com/ to get your api key.
+secrets is your api key. Register on budpay to website  [here](https://app.budpay.com/) or [here for older version](https://merchant.budpay.com/) to get your api key.
 ### Accept Payment
 
 
@@ -370,3 +370,15 @@ payout.walletBalance(secret, currency);
 ```bash
 payout.walletTransactions(secret, currency);
 ```
+
+# Open Source Documentation
+For more detailed documentation, contribution guidelines, and issues, please visit our [GitHub repository](https://github.com/maoltech/budpay-sdk).
+
+# NPM Package Information
+npm package
+Version: 1.0.0
+License: MIT
+
+
+Ensure that you replace any placeholder information such as `"secret"` and `"data"` with the actual variables or parameters required for your methods.
+
